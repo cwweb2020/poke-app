@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 1.5em;
+    height: 12vh;
+    background: #ffc500;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 4px solid red;
+
 
 `

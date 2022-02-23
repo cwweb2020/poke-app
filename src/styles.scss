@@ -3,3 +3,136 @@
     padding : 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "poke";
+    src: url("../public/fonts/poke-font.ttf");
+}
+
+// a {
+//     text-decoration: none;
+//     color: #000;
+//     font-size: 20px;
+//     font-weight: 500;
+// }
+
+.header-total {
+
+    .header-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        margin: auto;
+
+        .link-container {
+            width: 10%;
+            background: white;
+            height: 100%;
+            margin-left: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-heading {
+            margin: 0;
+            font-family: "poke";
+            text-transform: capitalize;
+            letter-spacing: 1px;
+
+        }
+    }
+
+}
+
+.card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    border-radius: 15px;
+    overflow: hidden;
+   
+
+           .img-card-container {
+               width: 100%;
+               height: 65%;
+               
+             a {
+
+                 .card-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: scale-down;
+                        padding: 12px;
+                 }
+             }
+           }
+           .card-body {
+                background: aquamarine;
+                height: 35%;
+                overflow: hidden;
+
+                .card-title {
+                    text-transform: capitalize;
+                    font-family: "poke";
+                    letter-spacing: 1.1px;
+                }
+                .card-type {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    margin: 0;
+                }
+           }
+ 
+}
+
+// description
+.desc-total {
+    width: 100%;
+    min-height: 100vh; 
+    padding-bottom: 100px;
+ 
+         .desc-wrapper {
+             width: 75%;
+             margin: auto;
+             display: grid;
+             grid-template-columns: 40% 1fr;
+             grid-column-gap: 25px;
+ 
+                .desc-pic-container {
+ 
+                      img {
+                          width: 100%;
+ 
+                      }
+                }
+                .desc-info-container {
+                      padding: 70px 35px 0 25px;
+                      position: relative;
+ 
+                       p {
+                           margin: 0%;
+                           font-size: 20px;
+                       }
+ 
+                       span {
+                         position: absolute;
+                         top: 0;
+                         right: 0;
+                         cursor: pointer;
+                         background: #d3d3d375;
+                         border-radius: 50%;
+                         width: 60px;
+                         height: 60px;
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+ 
+                           svg {
+                             width: 36px;
+                             height: 36px;
+                           }
+                       }
+                }
+         }
+ 
+    
+ }

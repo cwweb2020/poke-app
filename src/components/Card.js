@@ -1,24 +1,41 @@
-import React from 'react'
-import Spinner from './Spinner'
-
-const Card = ({characters}) => {
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
+const Card = ({ poke }) => {
   return (
     <>
-      {characters !== undefined ? characters.map(c => (
-        <div className="card" key={c.name}>
-          <img src={c.url} alt="character" />
+      {poke.map((c, index) => (
+        <div className="card" key={index}>
+          <div className="img-card-container">
+            <Link to={`/description/${c.id}`}>
+              <LazyLoadImage
+                className="card-img"
+                src={c.sprites.other.dream_world.front_default}
+                alt={c.name}
+              />
+            </Link>
+          </div>
           <div className="card-body">
-            <h5 className="card-title">{c.name}</h5>
+            <h3 className="card-title text-center card-title fs-2">{c.name}</h3>
+            <hr />
+            <h3 className="card-type">Types : 
+             <ul>
+            {c.types.map((item) => (
+                <li>{item.type.name}</li>
+              ))}
+
+             </ul>
+            </h3>
+           
+             
+           
           </div>
         </div>
-      ))
-           : (<div className='d-flex justify-content-center'><Spinner  /></div>)
-      } 
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
