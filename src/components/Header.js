@@ -13,8 +13,7 @@ const Header = () => {
             </Link>
           </div>
           <Link to="/">
-          <h2 className="header-heading">pokemon app</h2>
-
+            <h2 className="header-heading">pokemon app</h2>
           </Link>
         </div>
       </HeaderStyled>

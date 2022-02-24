@@ -107,10 +107,7 @@ a {
 
                           
                         }
-                        p {
-                          font-family: 'Cabin', sans-serif;
-                          font-size: 1.4rem;
-                        }
+
                 }
                 .desc-info-container {
                       padding: 70px 35px 0 25px;
@@ -147,5 +144,47 @@ a {
                 }
          }
  
-    
+    .description-container {
+        width: 60%;
+        margin: auto;
+        padding: 30px;
+        margin-top: 20px;
+
+        p {
+            font-family: 'Cabin', sans-serif;
+            font-size: 1.4rem;
+          }
+    }
+ }
+
+ //// evolution
+ .evolution-total {
+    width: 100%;
+    padding: 40px 0;
+    border-radius: 20px;
+    overflow: hidden;
+
+      .evolution-wrapp {
+        width: 50%;
+        margin: auto;
+        background: lightgray;
+        padding: 50px;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+
+          .box {
+              h2 {
+                    font-family: "poke";
+                    text-transform: capitalize;
+                    letter-spacing: 1px;
+              }
+          }
+      }
+      .evolution-heading {
+        margin: 0;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+      }
  }

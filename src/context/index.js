@@ -2,7 +2,6 @@ import { useContext, createContext, useState, useEffect } from "react";
 import { getPokemon, getPokemons } from "../services";
 import axios from "axios";
 
-
 const CharContext = createContext();
 export const CharConsumer = () => useContext(CharContext);
 
@@ -13,8 +12,7 @@ const CharProvider = ({ children }) => {
 
   const [speciesPoke, setSpeciesPoke] = useState("");
   const [pokeDescription, setPokeDescritpion] = useState("");
-
-
+  const [chainEvolution, setChainEvolution] = useState("");
 
   // bring data
   useEffect(() => {
@@ -23,7 +21,7 @@ const CharProvider = ({ children }) => {
         const res = await getPokemons(
           `https://pokeapi.co/api/v2/pokemon/?limit=${limit}`
         );
-      //  console.log(res);
+        //  console.log(res);
         let resultado = await getPokemon(res);
         setPoke(resultado);
         setSpinner(false);
@@ -34,31 +32,40 @@ const CharProvider = ({ children }) => {
     getCharacters();
   }, [limit]);
 
-  // console.log(poke);
-
   //  activates load more option
   const LoadMore = () => {
     setSpinner(true);
     setLimit(limit + 20);
   };
   //////// get species
-   const getSpecies = async (url) => {
+  const getSpecies = async (url) => {
     try {
       const res = await axios.get(url);
       setSpeciesPoke(res.data.habitat.name);
       console.log(res.data);
-      console.log(res.data.flavor_text_entries[0].flavor_text)
+      // evolution set
+      const evolution = res.data.evolution_chain.url;
+      const response = await axios.get(evolution);
+      setChainEvolution(response.data.chain.species.name);
+
       setPokeDescritpion(res.data.flavor_text_entries[0].flavor_text);
     } catch (error) {
       console.log(error);
     }
-  
-   }
-   /// get description
-   
+  };
 
   return (
-    <CharContext.Provider value={{ poke, spinner,speciesPoke, pokeDescription, LoadMore, getSpecies }}>
+    <CharContext.Provider
+      value={{
+        poke,
+        spinner,
+        speciesPoke,
+        pokeDescription,
+        chainEvolution,
+        LoadMore,
+        getSpecies,
+      }}
+    >
       {children}
     </CharContext.Provider>
   );

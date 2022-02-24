@@ -8,7 +8,7 @@ const DescriptionDetail = ({ singlePoke }) => {
   // gets the url of the species
   const getSpeciesUrl = () => {
     const speciesUrl = singlePoke.species.url;
-    console.log(speciesUrl);
+
     getSpecies(speciesUrl);
   };
 
@@ -16,7 +16,7 @@ const DescriptionDetail = ({ singlePoke }) => {
     setTimeout(() => {
       getSpeciesUrl();
     }, 1000);
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [singlePoke]);
 
   return (
@@ -33,22 +33,25 @@ const DescriptionDetail = ({ singlePoke }) => {
                 src={singlePoke.sprites.other.dream_world.front_default}
                 alt=""
               />
-              <p className="mt-4">{pokeDescription ? pokeDescription : " " }</p>
             </div>
             <div className="desc-info-container">
               <div className="info-wrapper">
-              <ul>
+                <ul>
                   <li>
-                 Name : <span className="space">//</span> <span>{singlePoke.name}</span>
-
+                    Name : <span className="space">//</span>{" "}
+                    <span>{singlePoke.name}</span>
                   </li>
                   <li>
-                  Habitat: <span className="space">//</span>  <span>{speciesPoke}</span>
+                    Habitat: <span className="space">//</span>{" "}
+                    <span>{speciesPoke}</span>
                   </li>
-              </ul>
- 
+                </ul>
               </div>
             </div>
+          </div>
+          <div className="description-container">
+            <h3>Description</h3>
+            <p>{pokeDescription ? pokeDescription : " "}</p>
           </div>
         </>
       )}

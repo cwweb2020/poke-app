@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
 const Card = ({ poke }) => {
   return (
     <>
@@ -20,17 +19,14 @@ const Card = ({ poke }) => {
           <div className="card-body">
             <h3 className="card-title text-center card-title fs-2">{c.name}</h3>
             <hr />
-            <h3 className="card-type">Types : 
-             <ul>
-            {c.types.map((item, index) => (
-                <li key={index}>{item.type.name}</li>
-              ))}
-
-             </ul>
+            <h3 className="card-type">
+              Types :
+              <ul>
+                {c.types.map((item, index) => (
+                  <li key={index}>{item.type.name}</li>
+                ))}
+              </ul>
             </h3>
-           
-             
-           
           </div>
         </div>
       ))}

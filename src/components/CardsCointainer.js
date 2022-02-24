@@ -20,7 +20,7 @@ const CardsCointainer = () => {
           </div>
         )}
       </Wrapper>
-        <MyButton onClick={LoadMore}>load more</MyButton>
+      <MyButton onClick={LoadMore}>load more</MyButton>
     </Section>
   );
 };
