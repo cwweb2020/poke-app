@@ -22,8 +22,8 @@ const Card = ({ poke }) => {
             <hr />
             <h3 className="card-type">Types : 
              <ul>
-            {c.types.map((item) => (
-                <li>{item.type.name}</li>
+            {c.types.map((item, index) => (
+                <li key={index}>{item.type.name}</li>
               ))}
 
              </ul>

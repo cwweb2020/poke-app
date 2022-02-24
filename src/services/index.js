@@ -21,9 +21,11 @@ export const getPokemon = async (arr) => {
 export const getSinglePokemon = async (id) => {
     try {
         const res = await axios.get(
-           `https://pokeapi.co/api/v2/ability/${id}/`
+          // `https://pokeapi.co/api/v2/ability/${id}/`
+          `https://pokeapi.co/api/v2/pokemon/${id}/`
         );
         return res.data;
+       
     } catch (error) {
         console.log(error);
     }

@@ -12,7 +12,10 @@ const Header = () => {
               <img src="../img/menu.png" alt="" />
             </Link>
           </div>
+          <Link to="/">
           <h2 className="header-heading">pokemon app</h2>
+
+          </Link>
         </div>
       </HeaderStyled>
     </>
