@@ -38,11 +38,11 @@ const DescriptionDetail = ({ singlePoke }) => {
               <div className="info-wrapper">
                 <ul>
                   <li>
-                    Name : <span className="space">//</span>{" "}
+                    Name : &nbsp;&nbsp;
                     <span>{singlePoke.name}</span>
                   </li>
                   <li>
-                    Habitat: <span className="space">//</span>{" "}
+                    Habitat: &nbsp;&nbsp;
                     <span>{speciesPoke}</span>
                   </li>
                 </ul>
