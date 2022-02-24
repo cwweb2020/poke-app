@@ -5,6 +5,14 @@
     padding : 0;
     box-sizing: border-box;
 }
+
+html {
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: "poke";
     src: url("../public/fonts/poke-font.ttf");
@@ -121,7 +129,7 @@ a {
                         padding: 25px 12px;
                         width: 85%;
                         border-radius: 15px;
-                        height: 46%;
+                        min-height: 46%;
 
                           ul {
                               list-style: none;
@@ -188,3 +196,37 @@ a {
         left: 1%;
       }
  }
+
+
+ /// responsive
+ @media screen and (max-width: 800px){
+
+     .wrapper {
+        grid-template-columns: 1fr 1fr !important;
+     }
+     .desc-total .desc-wrapper {
+        grid-template-columns: 1fr !important;
+        width: 90%;
+     }
+     .description-container {
+        width: 90% !important;
+     }
+     .evolution-total .evolution-wrapp {
+        width: 90% !important;
+     }
+ }
+
+ @media screen and (max-width: 450px){
+     html {
+         font-size: 10px;
+     }
+    .wrapper {
+       grid-template-columns: 1fr !important;
+    }
+    .evolution-total .evolution-wrapp img {
+        width: 34px !important;
+    }
+    .evolution-total .evolution-wrapp {
+        padding: 50px 15px;
+    }
+}

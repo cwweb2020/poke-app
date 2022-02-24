@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CharConsumer } from "../context";
 
+
 const Evolution = ({ singlePoke }) => {
   const [evolName, setEvolName] = useState("");
   const { chainEvolution } = CharConsumer();
@@ -20,6 +21,7 @@ const Evolution = ({ singlePoke }) => {
           <div className="box">
             <h2>{evolName}</h2>
           </div>
+           <img src="../img/arrow.png" alt="" />
           <div className="box">
             <h2>{chainEvolution}</h2>
           </div>
